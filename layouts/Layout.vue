@@ -1,0 +1,89 @@
+<template>
+  <div class="list-view">
+    <ol class="list">
+      <li v-for="page of filteredList" :key="page.key" class="list-item">
+        <router-link :to="page.path" class="item-title">
+          {{ page.title }}
+        </router-link>
+        <br>
+        <time-ago :last-updated="page.frontmatter.date" class="item-date" />
+      </li>
+    </ol>
+    <div class="pagination">
+      <router-link
+        v-if="$pagination.hasPrev"
+        :to="$pagination.prevLink"
+        class="pagination-item"
+      >
+        上一页
+      </router-link>
+      <router-link
+        v-if="$pagination.hasNext"
+        :to="$pagination.nextLink"
+        class="pagination-item"
+      >
+        下一页
+      </router-link>
+    </div>
+  </div>
+</template>
+
+<script>
+import TimeAgo from '@theme/components/TimeAgo.vue'
+
+export default {
+  name: 'Layout',
+  components: {
+    TimeAgo,
+  },
+  computed: {
+    filteredList() {
+      // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+      return this.$pagination
+        .pages
+        .sort((a, b) => b.frontmatter.date - a.frontmatter.date)
+    },
+  },
+}
+</script>
+
+<style lang="stylus">
+@import '../styles/variables.styl'
+
+.list-view
+  margin 0 20px
+
+  ol,
+  ul
+    padding 0
+    list-style none
+
+.list-item
+  position relative
+  margin-bottom 50px
+
+.item-title
+  display inline-block
+  margin-bottom 10px
+  font-size fontSize + 2
+  color textColor
+
+  &:hover
+    color linkColor
+
+.item-date
+  display inline-block
+  font-size fontSize - 2
+  color metaColor
+  border-top 1px solid lineColor
+  padding-top 12px
+
+.pagination
+  margin-bottom 20px
+  display flex
+  justify-content space-around
+
+.pagination-item
+  color metaColor
+  text-decoration underline
+</style>

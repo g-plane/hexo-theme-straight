@@ -1,0 +1,135 @@
+@import '~prismjs/themes/prism.css'
+@import './variables.styl'
+
+//
+// Common
+// -----------------------------------------
+/::-moz-selection,
+/::selection
+  background #B2D7FF
+
+body
+  // font
+  font-family fontFamily
+  font-size fontSize
+  line-height 2
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -webkit-text-size-adjust none
+  // size
+  position relative
+  max-width 700px
+  margin 0 auto
+  padding 0
+  background bgColor
+  color textColor
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-weight 400
+  position relative
+
+a
+  text-decoration none
+  color linkColor
+  overflow-wrap break-word
+  word-break break-all
+
+code
+  font-family monospaceFontFamily !important
+
+img,
+video,
+canvas,
+iframe
+  max-width 100%
+
+// -----------------------------------------
+// Shared
+// -----------------------------------------
+.header
+  margin 50px auto 40px
+  text-align center
+
+blockquote
+  margin 0
+  padding 0 16px
+  border-left 4px solid lineColor
+
+table
+  border-collapse collapse
+
+td,
+th
+  border 1px solid lineColor
+  padding 0.4em 1em
+
+// https://github.com/vuejs/vuepress/blob/v1.0.0-alpha.37/packages/@vuepress/theme-default/styles/custom-blocks.styl
+.custom-block
+  .custom-block-title
+    font-weight 600
+
+  p
+    line-height 1.5
+
+  &.tip,
+  &.warning,
+  &.danger
+    padding 0.1em 1.5em
+    border-left-width 0.5em
+    border-left-style solid
+    margin 1em 0
+
+  &.tip
+    background-color #f3f5f7
+    border-color #42b983
+
+  &.warning
+    background-color rgba(255, 229, 100, 0.3)
+    border-color darken(#ffe564, 35%)
+    color darken(#ffe564, 70%)
+
+    .custom-block-title
+      color darken(#ffe564, 50%)
+
+  &.danger
+    background-color #ffe6e6
+    border-color darken(red, 20%)
+    color darken(red, 70%)
+
+    .custom-block-title
+      color darken(red, 40%)
+
+//
+// Override Prism
+// -----------------------------------------
+div[class*='language-']
+  position relative
+  background codeBgColor
+  border-radius 5px
+
+  .highlight-lines
+    position absolute
+    user-select none
+    top 0
+    left 0
+    width 100%
+    line-height 1.5
+    padding 1em 0
+
+    .highlighted
+      background-color #fffbdd
+
+  code
+    padding 0
+    background transparent
+
+  pre[class*='language-']
+    position relative
+    color textColor
+    background-color transparent
+    font-family monospaceFontFamily !important
