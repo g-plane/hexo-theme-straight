@@ -7,16 +7,16 @@
       <time-ago :last-updated="$page.frontmatter.date" class="post-info" />
       <span class="post-info post-tag">
         <span v-for="tag in $frontmatter.tags" :key="tag">
-          <router-link :to="`/tag/${tag}`"># {{ tag }}</router-link>&nbsp;
+          <router-link :to="$tag.getItemByName(tag).path">
+            # {{ tag }}
+          </router-link>
+          &nbsp;
         </span>
       </span>
     </div>
     <Content />
     <ClientOnly>
-      <div
-        v-if="$themeConfig.disqus && !$page.path.startsWith('/tag')"
-        class="disqus"
-      >
+      <div v-if="$themeConfig.disqus" class="disqus">
         <p class="disqus-notice">本站使用 Disqus</p>
         <vue-disqus :shortname="$themeConfig.disqus" />
       </div>
@@ -27,7 +27,7 @@
 <script>
 import Vue from 'vue'
 import VueDisqus from 'vue-disqus'
-import TimeAgo from '@theme/components/TimeAgo'
+import TimeAgo from '@theme/components/TimeAgo.vue'
 
 Vue.use(VueDisqus)
 

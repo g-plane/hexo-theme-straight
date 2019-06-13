@@ -18,7 +18,8 @@
     "styles"
   ],
   "dependencies": {
-    "timeago.js": "^4.0.0-beta.2"
+    "timeago.js": "^4.0.0-beta.2",
+    "vue-disqus": "^3.0.5"
   },
   "devDependencies": {
     "@gplane/tsconfig": "^1.0.0",
@@ -41,6 +42,7 @@
     "preset": "ts-jest/presets/default",
     "transform": {
       ".*\\.ts$": "ts-jest",
+      ".*\\.js$": "babel-jest",
       ".*\\.vue$": "vue-jest"
     },
     "moduleFileExtensions": [
@@ -49,6 +51,9 @@
       "ts",
       "json",
       "node"
-    ]
+    ],
+    "moduleNameMapper": {
+      "@theme/components/(.*)": "<rootDir>/components/$1"
+    }
   }
 }

@@ -9,6 +9,7 @@ test('render page', () => {
     },
   })
   expect(wrapper.text()).toContain('返回首页')
+  expect(wrapper.find('router-link-stub').attributes('to')).toBe('/')
 })
 
 test('custom notice text', () => {
