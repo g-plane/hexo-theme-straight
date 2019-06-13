@@ -28,7 +28,7 @@ export default {
   name: 'NavBar',
   computed: {
     navbar() {
-      return this.$themeConfig.navbar || []
+      return this.$themeConfig.navbar || Object.create(null)
     },
   },
 }
