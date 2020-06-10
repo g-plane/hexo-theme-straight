@@ -16,24 +16,19 @@
     </div>
     <Content />
     <ClientOnly>
-      <div v-if="$themeConfig.disqus" class="disqus">
-        <p class="disqus-notice">本站使用 Disqus</p>
-        <vue-disqus :shortname="$themeConfig.disqus" />
-      </div>
+      <Comment />
     </ClientOnly>
   </section>
 </template>
 
 <script>
-import Vue from 'vue'
-import VueDisqus from 'vue-disqus'
+import { Comment } from '@vuepress/plugin-blog/lib/client/components.js'
 import TimeAgo from '@theme/components/TimeAgo.vue'
-
-Vue.use(VueDisqus)
 
 export default {
   name: 'Post',
   components: {
+    Comment,
     TimeAgo,
   },
 }
