@@ -59,8 +59,6 @@ module.exports = {
 - Navigation bar supports VueRouter's `<router-link>` component.
 - Out-of-the-box Disqus support.
 
-Additionally, this fork contains unit tests for the theme, while origin work doesn't contain. And the unit tests is written in TypeScript.
-
 ## 📃 License
 
 MIT License
