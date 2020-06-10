@@ -1,6 +1,0 @@
-{
-  "extends": "@gplane/tsconfig",
-  "compilerOptions": {
-    "noEmit": true
-  }
-}
