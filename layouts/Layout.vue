@@ -15,14 +15,14 @@
         :to="$pagination.prevLink"
         class="pagination-item"
       >
-        上一页
+        {{ $pagination.prevText }}
       </router-link>
       <router-link
         v-if="$pagination.hasNext"
         :to="$pagination.nextLink"
         class="pagination-item"
       >
-        下一页
+        {{ $pagination.nextText }}
       </router-link>
     </div>
   </div>
