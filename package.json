@@ -15,7 +15,7 @@
     "index.js"
   ],
   "dependencies": {
-    "timeago.js": "^4.0.2"
+    "dayjs": "^1.8.34"
   },
   "peerDependencies": {
     "@vuepress/plugin-blog": "^1.9.2"
