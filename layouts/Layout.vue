@@ -10,7 +10,7 @@
           class="item-date"
           :datetime="page.frontmatter.date"
           pubdate="pubdate"
-        >{{ page.frontmatter.date.toLocaleDateString() }}</time>
+        >{{ formatDate(page.frontmatter.date) }}</time>
       </li>
     </ol>
     <div class="pagination">
@@ -41,6 +41,11 @@ export default {
       return this.$pagination
         .pages
         .sort((a, b) => b.frontmatter.date - a.frontmatter.date)
+    },
+  },
+  methods: {
+    formatDate(date) {
+      return new Date(date).toLocaleDateString()
     },
   },
 }

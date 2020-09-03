@@ -8,7 +8,7 @@
         class="post-info"
         :datetime="$frontmatter.date"
         pubdate="pubdate"
-      >{{ $frontmatter.date.toLocaleDateString() }}</time>
+      >{{ formatDate($frontmatter.date) }}</time>
       <span class="post-info post-tag">
         <span v-for="tag in $frontmatter.tags" :key="tag">
           <router-link :to="$tag.getItemByName(tag).path">
@@ -32,6 +32,11 @@ export default {
   name: 'Post',
   components: {
     Comment,
+  },
+  methods: {
+    formatDate(date) {
+      return new Date(date).toLocaleDateString()
+    },
   },
 }
 </script>
