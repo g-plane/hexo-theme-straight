@@ -8,7 +8,7 @@
         <br>
         <time
           class="item-date"
-          datetime="page.frontmatter.date"
+          :datetime="page.frontmatter.date"
           pubdate="pubdate"
         >{{ page.frontmatter.date.toLocaleDateString() }}</time>
       </li>
