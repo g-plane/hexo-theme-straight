@@ -4,19 +4,19 @@
       <h1 class="post-title">
         {{ $page.title }}
       </h1>
-      <time
-        class="post-info"
-        :datetime="$frontmatter.date"
-        pubdate="pubdate"
-      >{{ formatDate($frontmatter.date) }}</time>
-      <span class="post-info post-tag">
-        <span v-for="tag in $frontmatter.tags" :key="tag">
-          <router-link :to="$tag.getItemByName(tag).path">
-            # {{ tag }}
-          </router-link>
-          &nbsp;
+      <div class="post-info">
+        <time :datetime="$frontmatter.date" pubdate="pubdate">
+          {{ formatDate($frontmatter.date) }}
+        </time>
+        <span class="post-tag">
+          <span v-for="tag in $frontmatter.tags" :key="tag">
+            <router-link :to="$tag.getItemByName(tag).path">
+              # {{ tag }}
+            </router-link>
+            &nbsp;
+          </span>
         </span>
-      </span>
+      </div>
     </div>
     <Content />
     <ClientOnly>
@@ -104,18 +104,19 @@ export default {
   position relative
 
 .post-title
+  text-align center
   font-size fontSize * 2
-  margin-bottom 50px
   line-height 1
 
 .post-info
-  position absolute
-  right 0
-  top 0
+  display flex
+  justify-content space-between
   font-size fontSize - 2
   font-weight 400
   line-height fontSize * 2
   color metaColor
+.post-info time
+  letter-spacing 1px
 
 // when smaller than tablet
 @media (max-width: 767px)
