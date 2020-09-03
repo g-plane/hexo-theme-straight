@@ -6,7 +6,7 @@
       </h1>
       <time
         class="post-info"
-        datetime="page.frontmatter.date"
+        datetime="$page.frontmatter.date"
         pubdate="pubdate"
       >{{ page.frontmatter.date.toLocaleDateString() }}</time>
       <span class="post-info post-tag">
