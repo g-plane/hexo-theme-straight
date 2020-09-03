@@ -1,7 +1,7 @@
 {
   "name": "vuepress-theme-simple-blog",
   "description": "Forked from vuepress-theme-simple, but provides better support for @vuepress/plugin-blog.",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "author": "viko16 <16viko@gmail.com>",
   "license": "MIT",
   "repository": "g-plane/vuepress-theme-simple-blog",
