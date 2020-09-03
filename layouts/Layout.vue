@@ -77,10 +77,10 @@ export default {
 
 .item-date
   display inline-block
-  font-size fontSize - 2
   color metaColor
   border-top 1px solid lineColor
   padding-top 12px
+  letter-spacing 1px
 
 .pagination
   margin-bottom 20px
