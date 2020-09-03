@@ -35,7 +35,9 @@ export default {
   },
   methods: {
     formatDate(date) {
-      return new Date(date).toLocaleDateString()
+      date = new Date(date)
+      date.setHours(date.getHours() - 8)
+      return date.toLocaleDateString()
     },
   },
 }
