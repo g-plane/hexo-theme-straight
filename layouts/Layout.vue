@@ -6,7 +6,11 @@
           {{ page.title }}
         </router-link>
         <br>
-        <time-ago :last-updated="page.frontmatter.date" class="item-date" />
+        <time
+          class="item-date"
+          datetime="page.frontmatter.date"
+          pubdate="pubdate"
+        >{{ page.frontmatter.date.toLocaleDateString() }}</time>
       </li>
     </ol>
     <div class="pagination">
@@ -29,13 +33,8 @@
 </template>
 
 <script>
-import TimeAgo from '@theme/components/TimeAgo.vue'
-
 export default {
   name: 'Layout',
-  components: {
-    TimeAgo,
-  },
   computed: {
     filteredList() {
       // eslint-disable-next-line vue/no-side-effects-in-computed-properties

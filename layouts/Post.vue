@@ -4,7 +4,11 @@
       <h1 class="post-title">
         {{ $page.title }}
       </h1>
-      <time-ago :last-updated="$page.frontmatter.date" class="post-info" />
+      <time
+        class="post-info"
+        datetime="page.frontmatter.date"
+        pubdate="pubdate"
+      >{{ page.frontmatter.date.toLocaleDateString() }}</time>
       <span class="post-info post-tag">
         <span v-for="tag in $frontmatter.tags" :key="tag">
           <router-link :to="$tag.getItemByName(tag).path">
@@ -23,13 +27,11 @@
 
 <script>
 import { Comment } from '@vuepress/plugin-blog/lib/client/components.js'
-import TimeAgo from '@theme/components/TimeAgo.vue'
 
 export default {
   name: 'Post',
   components: {
     Comment,
-    TimeAgo,
   },
 }
 </script>

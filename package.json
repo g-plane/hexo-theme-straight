@@ -14,9 +14,7 @@
     "styles",
     "index.js"
   ],
-  "dependencies": {
-    "dayjs": "^1.8.34"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@vuepress/plugin-blog": "^1.9.2"
   }
