@@ -1,15 +1,14 @@
 <template>
-  <header class="header">
+  <header>
     <router-link to="/" class="site-name">
       {{ $site.title }}
     </router-link>
-    <div style="clear: both" />
     <nav-bar />
   </header>
 </template>
 
 <script>
-import NavBar from '@theme/components/NavBar'
+import NavBar from '@theme/components/NavBar.vue'
 
 export default {
   name: 'HeaderBar',
@@ -19,13 +18,18 @@ export default {
 }
 </script>
 
+<style scoped>
+header {
+  margin: 36px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-<style lang="stylus">
-@import '../styles/variables.styl'
-
-.site-name
-  font-size fontSize + 2
-  letter-spacing 5px
-  text-transform uppercase
-  color textColor
+.site-name {
+  font-size: 24px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #555;
+}
 </style>
