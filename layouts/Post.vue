@@ -1,6 +1,6 @@
 <template>
   <section class="post-view">
-    <div class="post-head">
+    <div>
       <h1 class="post-title">
         {{ $page.title }}
       </h1>
@@ -8,7 +8,7 @@
         <time :datetime="$frontmatter.date" pubdate="pubdate">
           {{ formatDate($frontmatter.date) }}
         </time>
-        <span class="post-tag">
+        <span>
           <span v-for="tag in $frontmatter.tags" :key="tag">
             <router-link :to="$tag.getItemByName(tag).path">
               # {{ tag }}
@@ -43,63 +43,48 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-@import '../styles/variables.styl'
+<style>
 @import '../styles/variables.css';
 
-.post-view
-  position relative
-  margin 0 20px 50px
-
-  // overflow-x hidden
-  a.header-anchor
-    position absolute
-    left -30px
-    width 30px
-    text-align center
-    visibility hidden
-
-  h1:hover a.header-anchor,
-  h2:hover a.header-anchor,
-  h3:hover a.header-anchor,
-  h4:hover a.header-anchor,
-  h5:hover a.header-anchor,
-  h6:hover a.header-anchor
-    visibility visible
-
-.post-view a[href]:not(.header-anchor) {
+.post-view {
   position: relative;
 }
+.post-view a.header-anchor {
+  position: absolute;
+  left: -30px;
+  width: 30px;
+  text-align: center;
+  visibility: hidden;
+}
+
+h1:hover a.header-anchor,
+h2:hover a.header-anchor,
+h3:hover a.header-anchor,
+h4:hover a.header-anchor,
+h5:hover a.header-anchor,
+h6:hover a.header-anchor {
+  visibility: visible;
+}
+
 .post-view a[href]:not(.header-anchor):hover {
   border-bottom: 1px dashed var(--primary-color);
 }
 
-.post-head
-  position relative
-
-.post-title
-  text-align center
-  font-size fontSize * 2
-  line-height 1
+.post-title {
+  text-align: center;
+  font-size: 28px;
+}
 
 .post-info {
   display: flex;
   justify-content: space-between;
   color: #777;
-}
-.post-info time {
-  letter-spacing: 1px;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
-  .post-title {
-    font-size: 18px;
-  }
-  .post-info {
-    line-height fontSize * 1.5
+  .post-view {
+    padding: 0 16px;
   }
 }
-
-.post-tag
-  top fontSize * 1.5
 </style>
