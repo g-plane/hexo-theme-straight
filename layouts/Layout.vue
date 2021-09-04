@@ -57,6 +57,8 @@ export default {
 </script>
 
 <style scoped>
+@import '../styles/variables.css';
+
 .list-view {
   margin: 0 20px;
 }
@@ -74,7 +76,7 @@ li {
 
 .title {
   font-size: 20px;
-  color: #592ce5;
+  color: var(--primary-color);
   position: relative;
   text-align: center;
 }
