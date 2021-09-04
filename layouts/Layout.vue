@@ -67,13 +67,14 @@ ul {
 }
 li {
   margin-bottom: 56px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   font-size: 20px;
   color: #592ce5;
-  padding-bottom: 8px;
   position: relative;
 }
 .title::after {
