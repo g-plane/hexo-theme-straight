@@ -1,18 +1,21 @@
 <template>
   <div class="list-view">
-    <ol class="list">
-      <li v-for="page of filteredList" :key="page.key" class="list-item">
-        <router-link :to="page.path" class="item-title">
+    <ul>
+      <li v-for="page of filteredList" :key="page.key">
+        <router-link :to="page.path" class="title">
           {{ page.title }}
         </router-link>
-        <br>
-        <time
-          class="item-date"
-          :datetime="page.frontmatter.date"
-          pubdate="pubdate"
-        >{{ formatDate(page.frontmatter.date) }}</time>
+        <div>
+          <time
+            class="date"
+            :datetime="page.frontmatter.date"
+            pubdate="pubdate"
+          >
+            {{ formatDate(page.frontmatter.date) }}
+          </time>
+        </div>
       </li>
-    </ol>
+    </ul>
     <div class="pagination">
       <router-link
         v-if="$pagination.hasPrev"
@@ -53,43 +56,51 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-@import '../styles/variables.styl'
+<style scoped>
+.list-view {
+  margin: 0 20px;
+}
 
-.list-view
-  margin 0 20px
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  margin-bottom: 56px;
+  text-align: center;
+}
 
-  ol,
-  ul
-    padding 0
-    list-style none
+.title {
+  font-size: 20px;
+  color: #592ce5;
+  padding-bottom: 8px;
+  position: relative;
+}
+.title::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100px;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-.list-item
-  position relative
-  margin-bottom 50px
+.date {
+  margin-top: 16px;
+  color: #777;
+  letter-spacing: 1px;
+}
 
-.item-title
-  display inline-block
-  margin-bottom 10px
-  font-size fontSize + 2
-  color textColor
+.pagination {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-around;
+}
 
-  &:hover
-    color linkColor
-
-.item-date
-  display inline-block
-  color metaColor
-  border-top 1px solid lineColor
-  padding-top 12px
-  letter-spacing 1px
-
-.pagination
-  margin-bottom 20px
-  display flex
-  justify-content space-around
-
-.pagination-item
-  color metaColor
-  text-decoration underline
+.pagination-item {
+  color: #555;
+}
 </style>
