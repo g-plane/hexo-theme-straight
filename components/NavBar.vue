@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar">
+  <nav>
     <template v-for="(url, name) in navbar">
       <router-link
         v-if="url.startsWith('/')"
@@ -20,7 +20,7 @@
         {{ name }}
       </a>
     </template>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -34,14 +34,16 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-@import '../styles/variables.styl'
+<style scoped>
+nav {
+  margin: 10px 0;
+}
 
-.navbar
-  margin 10px 10px 0
-
-.navbar-item
-  margin-right 10px
-  color metaColor
-  text-decoration underline
+.navbar-item {
+  color: #888;
+  font-size: 15px;
+}
+.navbar-item:not(:last-child) {
+  margin-right: 10px;
+}
 </style>
