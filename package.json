@@ -12,6 +12,7 @@
     "components",
     "layouts",
     "styles",
+    "templates",
     "index.js"
   ],
   "dependencies": {},
