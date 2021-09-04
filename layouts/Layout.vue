@@ -76,6 +76,7 @@ li {
   font-size: 20px;
   color: #592ce5;
   position: relative;
+  text-align: center;
 }
 .title::after {
   content: '';
@@ -93,6 +94,7 @@ li {
   margin-top: 16px;
   color: #777;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 .pagination {
