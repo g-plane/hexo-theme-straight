@@ -67,7 +67,7 @@ h6:hover a.header-anchor {
 }
 
 .post-view a[href]:not(.header-anchor):hover {
-  border-bottom: 1px dashed var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .post-title {
