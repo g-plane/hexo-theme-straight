@@ -45,6 +45,7 @@ export default {
 
 <style lang="stylus">
 @import '../styles/variables.styl'
+@import '../styles/variables.css';
 
 .post-view
   position relative
@@ -66,41 +67,12 @@ export default {
   h6:hover a.header-anchor
     visibility visible
 
-  a[href]:not(.header-anchor)
-    position relative
-
-    &:hover
-      border-bottom 1px dashed linkColor
-
-    // thanks longsien/BareCSS
-    // https://github.com/longsien/BareCSS/blob/v1.1.0/less/_tooltip.less
-    &:after
-      content attr(href)
-      position absolute
-      left 50%
-      top 0
-      visibility hidden
-      pointer-events none
-      transform translate(-50%, -95%)
-      transition all 0.1s ease-in-out
-      overflow visible
-      padding 0 10px
-      background #454f54
-      font-size 0.8em
-      border-radius 5px
-      color #ffffff
-      line-height 2
-      white-space nowrap
-      opacity 0.9
-
-    &:hover:after
-      visibility visible
-      transform translate(-50%, calc(-100% - 5px))
-
-  code
-    background codeBgColor
-    padding 2px 4px 0
-    border-radius 5px
+.post-view a[href]:not(.header-anchor) {
+  position: relative;
+}
+.post-view a[href]:not(.header-anchor):hover {
+  border-bottom: 1px dashed var(--primary-color);
+}
 
 .post-head
   position relative
@@ -110,31 +82,24 @@ export default {
   font-size fontSize * 2
   line-height 1
 
-.post-info
-  display flex
-  justify-content space-between
-  font-size fontSize - 2
-  font-weight 400
-  line-height fontSize * 2
-  color metaColor
-.post-info time
-  letter-spacing 1px
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  color: #777;
+}
+.post-info time {
+  letter-spacing: 1px;
+}
 
-// when smaller than tablet
-@media (max-width: 767px)
-  .post-title
-    font-size fontSize * 1.5
-
-  .post-info
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 18px;
+  }
+  .post-info {
     line-height fontSize * 1.5
+  }
+}
 
 .post-tag
   top fontSize * 1.5
-
-.disqus
-  margin-top 80px
-
-.disqus-notice
-  color metaColor
-  text-align center
 </style>
