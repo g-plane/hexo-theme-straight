@@ -1,22 +1,16 @@
 {
-  "name": "vuepress-theme-simple-blog",
-  "description": "Forked from vuepress-theme-simple, but provides better support for @vuepress/plugin-blog.",
-  "version": "1.1.0",
-  "author": "viko16 <16viko@gmail.com>",
+  "name": "hexo-theme-straight",
+  "description": "Clean and simple Hexo theme.",
+  "version": "0.0.0",
+  "author": "Pig Fang <g-plane@hotmail.com>",
   "license": "MIT",
-  "repository": "g-plane/vuepress-theme-simple-blog",
+  "repository": "g-plane/hexo-theme-straight",
   "keywords": [
-    "vuepress"
+    "hexo",
+    "hexo-theme"
   ],
   "files": [
-    "components",
-    "layouts",
-    "styles",
-    "templates",
-    "index.js"
-  ],
-  "dependencies": {},
-  "peerDependencies": {
-    "@vuepress/plugin-blog": "^1.9.2"
-  }
+    "layout",
+    "source"
+  ]
 }

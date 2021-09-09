@@ -1,0 +1,67 @@
+:root {
+  --primary-color: #592ce5;
+}
+
+body {
+  font-family: "Fira Sans", system-ui, ui-sans-serif, sans-serif;
+  font-size: 18px;
+  line-height: 32px;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fbfbfb;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 99;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  word-break: keep-all;
+}
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 28px 0;
+}
+.site-name {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #555;
+  font-size: 24px;
+}
+
+.site-nav {
+  margin: 12px 0;
+  display: flex;
+}
+.site-nav-item {
+  color: #888;
+  font-size: 16px;
+  transition: 0.3s color;
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &:hover,
+  &:active {
+    color: #333;
+  }
+}
+
+.site-footer {
+  margin: 32px 0;
+  text-align: center;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 0 16px;
+  }
+}

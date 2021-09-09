@@ -1,0 +1,79 @@
+@import "./shared.less";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  position: relative;
+  &:hover .header-anchor {
+    visibility: visible;
+  }
+}
+
+.post-info a,
+article a {
+  text-decoration: none;
+  color: var(--primary-color);
+  word-break: keep-all;
+}
+main a:not(.header-anchor) {
+  &:hover,
+  &:active {
+    border-bottom: 1px solid var(--primary-color);
+  }
+}
+
+.tags {
+  list-style: none;
+}
+.tag:not(:first-child) {
+  margin-top: 4px;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0 8px;
+  border-left: 4px solid #ccc;
+  color: #999;
+}
+
+pre,
+img {
+  border-radius: 8px;
+}
+
+code,
+code[class*="language-"] {
+  font-size: 16px;
+  font-family: "Fira Code", monospace;
+}
+
+.post-title {
+  text-align: center;
+  font-size: 28px;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.header-anchor {
+  position: absolute;
+  font-size: 18px;
+  left: -20px;
+  width: 20px;
+  visibility: hidden;
+}

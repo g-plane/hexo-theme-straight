@@ -1,0 +1,54 @@
+@import "./shared.less";
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+.posts {
+  flex-grow: 99;
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-title {
+  font-size: 20px;
+  color: var(--primary-color);
+  position: relative;
+  text-align: center;
+  padding-bottom: 4px;
+}
+.post-title::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100px;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+time {
+  color: #777;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.pagination {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-around;
+  & a {
+    color: #555;
+    letter-spacing: 1px;
+  }
+}

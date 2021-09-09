@@ -1,0 +1,13 @@
+<div id="disqus_thread"></div>
+<script async defer>
+var disqus_config = function () {
+  this.page.url = '{{ page.permalink }}';
+  this.page.identifier = '{{ page.slug }}';
+};
+{
+let d = document, s = d.createElement('script');
+s.src = 'https://{{ config.theme_config.disqus.short_name }}.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+d.head.appendChild(s);
+}
+</script>

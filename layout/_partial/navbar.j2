@@ -1,0 +1,5 @@
+<nav class="site-nav">
+  {% for item in config.theme_config.nav_links %}
+    <a class="site-nav-item" href="{{ url_for(item.link) }}">{{ item.text }}</a>
+  {% endfor %}
+</nav>

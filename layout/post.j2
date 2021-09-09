@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdn.jsdelivr.net/npm/@fontsource/fira-sans@4.5.0/files/fira-sans-latin-400-normal.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdn.jsdelivr.net/npm/@fontsource/fira-code@4.5.1/files/fira-code-latin-400-normal.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdn.jsdelivr.net/npm/@fontsource/fira-sans@4.5.0/files/fira-sans-latin-400-italic.woff2">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-sans@4.5.0/400.css" integrity="sha256-offyo8cagLP2lW77Utya1CY2r+haeVuGogAIDxrPpwg=" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-code@4.5.1/400.css" integrity="sha256-BfNSwgCz8fNPtNSk4niQW4k7qI1QIf0ZjrM8qGxCosQ=" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-sans@4.5.0/400-italic.css" integrity="sha256-FqA04apROAPfv491P/FSMSDGYAen+AOHEg2XmcKs47E=" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.8.0/themes/prism-night-owl.min.css" crossorigin>
+    {{ css('post.css') }}
+    <title>{{ page.title }} | {{ config.title }}</title>
+  </head>
+  <body>
+    {% include '_partial/header.j2' %}
+    <main>
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.date and page.tags %}
+        <div class="post-info">
+          <span>{{ date(page.date) }}</span>
+          <ul class="tags">
+            {% for tag in page.tags.toArray() %}
+              <li class="tag">
+                <a href="{{ url_for(tag.path) }}">#{{ tag.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      <article>
+        {{ page.content }}
+      </article>
+      {% if config.theme_config.disqus and config.theme_config.disqus.enable %}
+        {% include '_partial/disqus.j2' %}
+      {% endif %}
+    </main>
+    {% include '_partial/footer.j2' %}
+  </body>
+</html>
