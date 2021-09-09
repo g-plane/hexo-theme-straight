@@ -15,6 +15,9 @@
     <meta name="description" content="{{ page.description or config.description }}">
     <meta name="keywords" content="{{ config.keywords }}{% if page.tags %}{% for tag in page.tags.toArray() %}, {{ tag.name }}{% endfor %}{% endif %}">
     <title>{{ page.title }} | {{ config.title }}</title>
+    {% if config.theme_config.favicon %}
+      {{ favicon_tag(config.theme_config.favicon) }}
+    {% endif %}
   </head>
   <body>
     {% include '_partial/header.j2' %}

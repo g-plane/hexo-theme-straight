@@ -37,6 +37,8 @@ nav_links: # Navigation links will be rendered under site name.
   - text: About Me
     link: /about
 
+favicon: favicon.webp # Path to favicon file.
+
 disqus:
   enable: true # Default value is `false`. If you use Disqus, set `true`.
   short_name: example # Your Disqus short name

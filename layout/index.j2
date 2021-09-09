@@ -10,6 +10,9 @@
     <meta name="description" content="{{ config.description }}">
     <meta name="keywords" content="{{ config.keywords }}">
     <title>{{ config.title }}</title>
+    {% if config.theme_config.favicon %}
+      {{ favicon_tag(config.theme_config.favicon) }}
+    {% endif %}
   </head>
   <body>
     {% include '_partial/header.j2' %}
