@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-sans@4.5.0/400-italic.css" integrity="sha256-FqA04apROAPfv491P/FSMSDGYAen+AOHEg2XmcKs47E=" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.8.0/themes/prism-night-owl.min.css" crossorigin>
     {{ css('post.css') }}
+    <meta name="description" content="{{ page.description or config.description }}">
+    <meta name="keywords" content="{{ config.keywords }}{% if page.tags %}{% for tag in page.tags.toArray() %}, {{ tag.name }}{% endfor %}{% endif %}">
     <title>{{ page.title }} | {{ config.title }}</title>
   </head>
   <body>
