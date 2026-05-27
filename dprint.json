@@ -1,8 +1,5 @@
 {
   "extends": "https://dprint.gplane.win/2026-03.json",
-  "markup": {
-    "associations": ["**/*.j2"]
-  },
   "plugins": [
     "https://plugins.dprint.dev/g-plane/pretty_jinja-v0.2.0.wasm"
   ]
