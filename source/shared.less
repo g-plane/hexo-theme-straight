@@ -35,6 +35,7 @@ a {
   text-transform: uppercase;
   color: #555;
   font-size: 24px;
+  font-weight: bold;
 }
 
 .site-nav {
@@ -42,22 +43,18 @@ a {
   display: flex;
 }
 .site-nav-item {
-  color: #888;
+  color: #333;
   font-size: 16px;
-  transition: 0.3s color;
   &:not(:last-child) {
     margin-right: 20px;
   }
-  &:hover,
-  &:active {
-    color: #333;
-  }
+  text-decoration: underline;
 }
 
 .site-footer {
   margin: 32px 0;
   text-align: center;
-  color: #888;
+  color: #333;
 }
 
 @media (max-width: 768px) {
