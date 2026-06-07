@@ -21,8 +21,8 @@
       <ul class="posts">
         {% for post in page.posts.toArray() %}
           <li class="post-item">
-            <a class="post-title" href="{{ url_for(post.path) }}">{{ post.title }}</a>
             <time>{{ date(post.date) }}</time>
+            <a class="post-title" href="{{ url_for(post.path) }}">{{ post.title }}</a>
           </li>
         {% endfor %}
       </ul>
